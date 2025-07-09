@@ -25,6 +25,11 @@ app.use(bodyParser.urlencoded({
 
 app.use(cors())
 
+// Ruta raíz para evitar Not Found
+app.get('/', (req, res) => {
+  res.send('¡Servidor backend funcionando en Render!')
+})
+
 app.use('/api', videojuegoRoutes)
 
 //Habilitamos el puerto
